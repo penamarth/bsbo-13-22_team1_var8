@@ -1,5 +1,8 @@
 # Диаграмма прецедентов UML для информационной системы жилищного агенства
 
+![use_case_diagram](assets/plantuml/use_case_diagram.svg)
+
+<!--
 ```plantuml
 @startuml
 skinparam packageStyle rect
@@ -27,3 +30,4 @@ package "ИС жилищного агенства" {
 
 @enduml
 ```
+-->
