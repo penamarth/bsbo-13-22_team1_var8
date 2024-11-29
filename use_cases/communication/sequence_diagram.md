@@ -8,23 +8,15 @@
 
 actor Квартиросъёмщик
 
-Квартиросъёмщик -> App : load()
+Квартиросъёмщик -> App : create()
 activate App
-App -> DatabaseAdapter : get_rent_flat(cur_user)
-activate DatabaseAdapter
-App <- DatabaseAdapter : flat
 Квартиросъёмщик -> App : open_chat()
-App -> Chat : create(cur_user, flat_owner)
+App -> Chat : create()
 activate Chat
-App -> Chat : load_full_history()
-Chat -> DatabaseAdapter : get_all_messages(sender, recepient)
-Chat <- DatabaseAdapter : messages
 loop пока не разрешена проблема
 Квартиросъёмщик -> App : send_message(text)
 App -> Chat : send_message(text)
-Chat -> DatabaseAdapter : send_message(text, sender, recepient)
-Chat -> DatabaseAdapter : get_new_messages(sender, recepient)
-Chat <- DatabaseAdapter : messages
+App -> Chat : get_new_messages()
 end
 Квартиросъёмщик -> App : close()
 
