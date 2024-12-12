@@ -1,6 +1,6 @@
 # Диаграмма последовательности прецедента "Связь с владельцем"
 
-![sequence_diagram](/assets/plantuml/sequence_diagram.svg)
+![sequence_diagram](/assets/plantuml/communication_sequence_diagram.svg)
 
 <!--
 ```plantuml

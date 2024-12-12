@@ -19,6 +19,10 @@ int main(int argc, char **argv) {
             }
             break;
         case 'p':
+            app->create_advert();
+            app->set_advert_info(4, "Bashnya Goyda, Strominka 20");
+            app->make_advert_do_smth();
+            break;
         case 'f':
         case 'r':
             std::cout << "Not implemented!\n";
@@ -27,6 +31,8 @@ int main(int argc, char **argv) {
             std::cerr << "Incorrect cmd arg. Use one of these: [ p, f, r, c ]\n";
             return 1;
     }
+
+    delete app;
 
     return 0;
 }

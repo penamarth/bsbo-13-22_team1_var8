@@ -11,6 +11,7 @@ private:
 
 public:
     Chat();
+    ~Chat();
     void send_message();
     void get_new_messages();
 };
