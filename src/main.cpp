@@ -24,6 +24,10 @@ int main(int argc, char **argv) {
             app->make_advert_do_smth();
             break;
         case 'f':
+            app->fetch_adverts();
+            app->filter_adverts_cheap_first();
+            app->get_first_found_advert();
+            break;
         case 'r':
             std::cout << "Not implemented!\n";
             break;
