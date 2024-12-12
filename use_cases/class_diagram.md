@@ -9,13 +9,16 @@
 class App {
 -cur_user: User
 -chat: Chat
--advert: Advert
+-adverts: Advert[]
 +open_chat();
 +send_message();
 +get_new_messages();
 +create_advert();
 +set_advert_info(room_num, address);
 +make_advert_do_smth();
++fetch_adverts();
++filter_adverts_cheap_first();
++get_first_found_advert();
 }
 
 interface AdvertState {
@@ -28,8 +31,16 @@ class InactiveAdvert {}
 
 class Advert {
 -state: AdvertState
--int: room_num
--string: address
+-room_num: int
+-address: string
+-cost: double
++get_cost(): double;
++set_room_num(room_num);
++set_adress(address);
++set_cost(cost);
++activate();
++diactivate();
++do_smth();
 }
 
 Advert o-> AdvertState
