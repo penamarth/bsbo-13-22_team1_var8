@@ -36,6 +36,11 @@ void Advert::set_cost(double cost) {
     std::cout << "Advert cost set to " << cost << "\n";
 }
 
+void Advert::set_renter(User renter) {
+    this->renter = renter;
+    std::cout << "Advert renter set\n";
+}
+
 void Advert::activate() {
     delete state;
     state = new ActiveAdvert();

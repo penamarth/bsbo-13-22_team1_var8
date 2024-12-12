@@ -1,4 +1,5 @@
 #pragma once
+#include "EmptyClasses.h"
 #include <string>
 
 class AdvertState {
@@ -13,6 +14,8 @@ private:
     int room_num = 0;
     std::string address = "";
     double cost = 0.0;
+    User owner;
+    User renter;
 
 public:
     Advert();
@@ -23,6 +26,7 @@ public:
     void set_room_num(int room_num);
     void set_address(std::string address);
     void set_cost(double cost);
+    void set_renter(User renter);
     void activate();
     void diactivate();
     void do_smth();
