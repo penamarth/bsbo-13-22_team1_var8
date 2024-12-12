@@ -19,6 +19,7 @@ class App {
 +fetch_adverts();
 +filter_adverts_cheap_first();
 +get_first_found_advert();
++apply_for_rent();
 }
 
 interface AdvertState {
@@ -34,10 +35,13 @@ class Advert {
 -room_num: int
 -address: string
 -cost: double
+-owner: User
+-renter: User
 +get_cost(): double;
 +set_room_num(room_num);
 +set_adress(address);
 +set_cost(cost);
++set_renter(renter);
 +activate();
 +diactivate();
 +do_smth();
@@ -66,6 +70,8 @@ App *-- Chat
 App -- User
 
 Chat -- User
+
+Advert -- User
 
 @enduml
 ```

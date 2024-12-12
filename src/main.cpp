@@ -29,7 +29,10 @@ int main(int argc, char **argv) {
             app->get_first_found_advert();
             break;
         case 'r':
-            std::cout << "Not implemented!\n";
+            app->fetch_adverts();
+            app->get_first_found_advert();
+            app->apply_for_rent();
+            app->make_advert_do_smth();
             break;
         default:
             std::cerr << "Incorrect cmd arg. Use one of these: [ p, f, r, c ]\n";

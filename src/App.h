@@ -25,4 +25,6 @@ public:
     void fetch_adverts();
     void filter_adverts_cheap_first();
     void get_first_found_advert();
+
+    void apply_for_rent();
 };

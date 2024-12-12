@@ -58,4 +58,13 @@ void App::filter_adverts_cheap_first() {
 void App::get_first_found_advert() {
     std::cout << "Getting first found advert\n";
     adverts[0]->print();
+    if (advert)
+        delete advert;
+    advert = adverts[0];
+}
+
+void App::apply_for_rent() {
+    std::cout << "Applying for rent\n";
+    advert->set_renter(cur_user);
+    advert->activate();
 }
