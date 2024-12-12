@@ -9,13 +9,18 @@
 class App {
 -cur_user: User
 -chat: Chat
--ads: Advert[]
+-advert: Advert
 +open_chat();
 +send_message();
 +get_new_messages();
++create_advert();
++set_advert_info(room_num, address);
++make_advert_do_smth();
 }
 
-interface AdvertState {}
+interface AdvertState {
++do_smth();
+}
 
 class ActiveAdvert {}
 
@@ -23,7 +28,8 @@ class InactiveAdvert {}
 
 class Advert {
 -state: AdvertState
--flat: Flat
+-int: room_num
+-string: address
 }
 
 Advert o-> AdvertState
@@ -31,13 +37,6 @@ ActiveAdvert --\> Advert
 InactiveAdvert --\> Advert
 ActiveAdvert --|> AdvertState
 InactiveAdvert --|> AdvertState
-
-class Flat {
--owner: User
--renter: User
--address: String
--room_num: int
-}
 
 class Chat {
 -one: User
@@ -56,8 +55,6 @@ App *-- Chat
 App -- User
 
 Chat -- User
-
-Advert --\> Flat
 
 @enduml
 ```
