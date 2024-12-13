@@ -19,9 +19,9 @@ activate InactiveAdvert
 Квартиросъёмщик -> App : apply_for_rent()
 App -> Advert : set_renter(cur_user)
 App -> Advert : activate()
-Advert -> InactiveAdvert : delete()
+Advert -> InactiveAdvert : activate()
+InactiveAdvert -> ActiveAdvert : create()
 deactivate InactiveAdvert 
-Advert -> ActiveAdvert : create()
 activate ActiveAdvert
 Квартиросъёмщик -> App : make_advert_do_smth()
 App -> Advert : do_smth()

@@ -6,6 +6,8 @@ class AdvertState {
 public:
     virtual ~AdvertState() {}
     virtual void do_smth() = 0;
+    virtual void activate() = 0;
+    virtual void deactivate() = 0;
 };
 
 class Advert {
@@ -28,16 +30,26 @@ public:
     void set_cost(double cost);
     void set_renter(User renter);
     void activate();
-    void diactivate();
+    void deactivate();
     void do_smth();
 };
 
 class ActiveAdvert : public AdvertState {
+private:
+    AdvertState **state = nullptr;
 public:
+    ActiveAdvert(AdvertState **state);
+    void activate() override;
+    void deactivate() override;
     void do_smth() override;
 };
 
 class InactiveAdvert : public AdvertState {
+private:
+    AdvertState **state = nullptr;
 public:
+    InactiveAdvert(AdvertState **state);
+    void activate() override;
+    void deactivate() override;
     void do_smth() override;
 };
